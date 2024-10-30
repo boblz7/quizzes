@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxt/eslint", "@nuxt/image"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+  ],
   css: ["~/assets/main.scss"],
   vite: {
     css: {
@@ -22,5 +27,17 @@ export default defineNuxtConfig({
       lg: 1280,
       xl: 1728,
     },
+  },
+  // srcDir: "./",
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
   },
 });
