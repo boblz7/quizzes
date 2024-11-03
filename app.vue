@@ -2,10 +2,10 @@
   <div>
     <NuxtPage />
 
-    <Toaster class="pointer-events-auto bg-secondary" :duration="3000" />
+    <Toaster
+      class="pointer-events-auto bg-secondary"
+      :duration="3000"
+      close-button
+    />
   </div>
 </template>
-
-<script lang="ts" setup>
-import { Toaster } from "@/components/ui/sonner";
-</script>

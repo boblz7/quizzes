@@ -35,16 +35,14 @@ watch(modelValue, () => {
     rows="1"
     @keyup.enter="
       (event) => {
-        // event.preventDefault();
-        console.log('keydown.enter', { event });
         props.onEnter && props.onEnter();
       }
     "
     @keydown.enter="(event) => event.preventDefault()"
     :class="
       cn(
-        'flex min-h-20 w-full rounded-md border border-input bg-input px-3 py-2 text-sm text-primary ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        'min-h-0 resize-none',
+        'flex min-h-20 w-full rounded-md border border-input bg-input px-3 py-2 text-base text-primary ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        'min-h-0 resize-none overflow-hidden',
         props.class,
       )
     "

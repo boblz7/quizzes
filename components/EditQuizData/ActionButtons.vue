@@ -6,7 +6,7 @@ defineProps<{
   resetCallback: VoidFunction;
   saveCallback: VoidFunction;
   isVariation?: boolean;
-
+  isLoading?: boolean;
   class?: HTMLAttributes["class"];
 }>();
 </script>
@@ -21,20 +21,22 @@ defineProps<{
       )
     "
   >
-    <Button
+    <QButton
       variant="outline"
-      @click="resetCallback"
       :class="cn(!isVariation ? 'min-w-24' : 'w-[90%]')"
+      :is-loading="isLoading"
+      @click="resetCallback"
     >
       Reset
-    </Button>
+    </QButton>
 
-    <Button
+    <QButton
       variant="secondary"
       :class="cn(!isVariation ? 'min-w-24' : 'w-[90%]')"
+      :is-loading="isLoading"
       @click="saveCallback"
     >
       Save changes
-    </Button>
+    </QButton>
   </div>
 </template>

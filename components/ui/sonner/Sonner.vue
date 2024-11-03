@@ -8,15 +8,22 @@ const props = defineProps<ToasterProps>();
   <Sonner
     class="toaster group"
     v-bind="props"
+    :duration="3000"
     :toast-options="{
       classes: {
-        toast:
-          'group toast group-[.toaster]:bg-secondary group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
-        description: 'group-[.toast]:text-muted-foreground',
+        title: 'text-sm font-semibold',
+        toast: 'toast group border-transparent shadow-lg backdrop-blur-lg',
+        description:
+          'text-muted-foreground group-[.error]:italic group-[.error]:text-white ',
         actionButton:
           'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
         cancelButton:
           'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
+
+        default: 'border-white bg-secondary/70 text-foreground',
+        error: 'error group bg-destructive/70 text-white',
+        warning: 'error group bg-orange-500/70 text-white',
+        success: 'border-white bg-secondary/70',
       },
     }"
   />
