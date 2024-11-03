@@ -1,75 +1,46 @@
-# Nuxt 3 Minimal Starter
+## Quick preview
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Application uses local file to store quizzes and questions if the api doesn't work. Details description of the app below
 
 ## Setup
 
-Make sure to install the dependencies:
+Create a `.env` file with `BACKEND_ROOT_URL` variable and put a correct url
+
+### Installation
+
+Make sure to install the dependencies
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+yarn  install
 ```
 
-## Development Server
+## Application description
 
-Start the development server on `http://localhost:3000`:
+### Overview of All Created Quizzes
 
-```bash
-# npm
-npm run dev
+The app has a page containing a table listing all quizzes created so far (excluding any that have been deleted). Each row in the table should display the quiz name, along with buttons for deleting the quiz and launching a preview. Clicking elsewhere in the row (anywhere other than these two buttons) initiates quiz editing.
 
-# pnpm
-pnpm run dev
+In addition to the quiz list table, this page should have a button to initiate the creation of a new quiz.
 
-# yarn
-yarn dev
+### Creating a New Quiz
 
-# bun
-bun run dev
+A new quiz is created using a form, which can be either in a modal or on a separate page. A quiz as an entity consists of:
+
+```
+name
+questions
 ```
 
-## Production
+All questions are in the same format, with each consisting of a simple text question and a simple text answer. There is no limit on the number of questions. The quiz creation form supports “recycling” questions from previously created quizzes. In this context, recycling means inserting previously written questions into this new quiz.
 
-Build the application for production:
+### Editing a Quiz
 
-```bash
-# npm
-npm run build
+Editing a quiz allows changes to its name or the questions it contains. Editing is also done through a form, which can be either in a modal or on a separate page.
 
-# pnpm
-pnpm run build
+### Deleting a Quiz
 
-# yarn
-yarn build
+Deleting a quiz removes it from the system, and it no longer appears in the list of previously created quizzes. The questions that make up the quiz are not deleted but remain in the system for potential recycling later on.
 
-# bun
-bun run build
-```
+### "Solving" a Quiz
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Once a quiz is created, it is "solvable." These quotes around "solving" indicate that it won’t actually be solvable in a traditional sense. The app has a page where users can go through all the quiz questions like a slideshow. Each slide in the slideshow displays a question and a button to reveal the answer (the answers remain hidden until the button is pressed).
