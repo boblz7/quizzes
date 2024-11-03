@@ -18,13 +18,13 @@ yarn  install
 
 ### Overview of All Created Quizzes
 
-The app has a page containing a table listing all quizzes created so far (excluding any that have been deleted). Each row in the table should display the quiz name, along with buttons for deleting the quiz and launching a preview. Clicking elsewhere in the row (anywhere other than these two buttons) initiates quiz editing.
+The app has a page containing a table listing all quizzes created so far (excluding any that have been deleted). Each row in the table displays the quiz name, along with buttons for deleting the quiz and launching a preview. Clicking elsewhere in the row (anywhere other than these two buttons) initiates quiz editing.
 
-In addition to the quiz list table, this page should have a button to initiate the creation of a new quiz.
+In addition to the quiz list table, this page has a button to initiate the creation of a new quiz.
 
 ### Creating a New Quiz
 
-A new quiz is created using a form, which can be either in a modal or on a separate page. A quiz as an entity consists of:
+A new quiz is created using a form, which is a modal. A quiz as an entity consists of:
 
 ```
 name
